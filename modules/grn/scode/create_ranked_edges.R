@@ -17,9 +17,9 @@ edges <- data.frame(
 )
 
 # Extract edges (excluding diagonal)
-for(i in 1:n_genes) {
-  for(j in 1:n_genes) {
-    if(i != j) {  # exclude self-loops
+for (i in 1:n_genes) {
+  for (j in 1:n_genes) {
+    if (i != j) {
       edges <- rbind(edges, data.frame(
         source = i,
         target = j,

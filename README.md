@@ -1,4 +1,4 @@
-# 🔬 SCODE Gene Regulatory Network Inference Pipeline (Nextflow)
+# 🧬 SCODE Gene Regulatory Network Inference Pipeline (Nextflow)
 
 This project implements the **SCODE (Sparsity-promoting Contextual Orthogonal Decomposition)** algorithm for gene regulatory network (GRN) inference from single-cell RNA-seq data using a **Nextflow DSL2 pipeline**. It accepts `.h5ad` format input and outputs a ranked list of regulatory gene pairs.
 
@@ -126,17 +126,7 @@ Additionally, map the indices to gene names using the `var_names` field of your 
 **Prosenjit Chowdhury**
 M.Sc. Artificial Intelligence – FAU Erlangen-Nürnberg
 Working Student @ SAP ERP PCX
-🌍 Erlangen, Germany
+Erlangen, Germany
 🔗 GitHub: [@prosenjit-chowdhury](https://github.com/prosenjit-chowdhury)
 
 ---
-
-## 🧠 License
-
-This project is licensed under the MIT License.
-See [LICENSE](LICENSE) for details.
-
-```
-
-
-```

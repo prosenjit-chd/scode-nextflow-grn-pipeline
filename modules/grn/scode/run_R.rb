@@ -1,47 +1,9 @@
-=begin
-#!/usr/bin/env ruby
-
 require 'fileutils'
 
 # Input arguments
 fdata  = ARGV[0]
 ftime  = ARGV[1]
-dir    = ARGV[2]  # This is "results"
-tfnum  = ARGV[3]
-pnum   = ARGV[4]
-cnum   = ARGV[5]
-maxite = ARGV[6]
-repnum = ARGV[7].to_i
-
-# Get absolute paths for R scripts
-scode_r = File.expand_path(File.join(__dir__, 'SCODE.R'))
-avg_r   = File.expand_path(File.join(__dir__, 'averageA.R'))
-
-# Ensure parent output dir exists
-FileUtils.mkdir_p(dir)
-
-# Run SCODE multiple times, each in its own subdirectory: results/out_1, out_2, ...
-(1..repnum).each do |i|
-  subdir = File.join(dir, "out_#{i}")
-  FileUtils.mkdir_p(subdir)
-
-  puts "Running SCODE trial #{i}/#{repnum}"
-  system("Rscript #{scode_r} #{fdata} #{ftime} #{subdir} #{tfnum} #{pnum} #{cnum} #{maxite}")
-end
-
-# Average A matrices
-puts "Averaging A matrices"
-system("Rscript #{avg_r} #{dir} #{repnum}")
-=end
-
-#!/usr/bin/env ruby
-
-require 'fileutils'
-
-# Input arguments
-fdata  = ARGV[0]
-ftime  = ARGV[1]
-dir    = ARGV[2]  # This is "results"
+dir    = ARGV[2]
 tfnum  = ARGV[3]
 pnum   = ARGV[4]
 cnum   = ARGV[5]
