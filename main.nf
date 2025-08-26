@@ -14,8 +14,12 @@ workflow {
 
 process convert_h5ad_to_scode_inputs {
   tag "convert_inputs"
+
+  // === USE CONTAINER MODE === 
+  container "community.wave.seqera.io/library/anndata_numpy_pandas_pip_pruned:56d43cedd30669c7"
+
+  // === USE CONDA MODE ===
   // conda "modules/grn/scode/scode_env.yml"
-  container "community.wave.seqera.io/library/anndata_r-ggplot2_r-optparse_r-r.utils_pruned:42c816f5ca5fc4ca"
 
   input:
   path expression_h5ad
@@ -36,8 +40,13 @@ process convert_h5ad_to_scode_inputs {
 
 process run_scode {
   tag "SCODE_run"
+
+  // === USE CONTAINER MODE === 
+  container "community.wave.seqera.io/library/anndata_numpy_pandas_pip_pruned:56d43cedd30669c7"
+
+  // === USE CONDA MODE ===
   // conda "modules/grn/scode/scode_env.yml"
-  container "community.wave.seqera.io/library/anndata_r-ggplot2_r-optparse_r-r.utils_pruned:42c816f5ca5fc4ca"
+
   publishDir "results", mode: 'copy'
 
   input:
@@ -58,3 +67,4 @@ process run_scode {
   cp results/ranked_edges.csv ranked_edges.csv
   """
 }
+
